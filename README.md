@@ -4,3 +4,5 @@
 npx create-react-app folder --template typescript 
 create-react-app создает приложение с typescript шаблоном в папку folder
 
+маршрутизация
+npm i react-router-dom @types/react-router-dom 
