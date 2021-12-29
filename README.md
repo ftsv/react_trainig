@@ -8,3 +8,8 @@ create-react-app создает приложение с typescript шаблон�
 npm i react-router-dom @types/react-router-dom
 статья с настройкой маршрутизации
 https://typescript.tv/react/upgrade-to-react-router-v6/#React-Router-v6
+
+react-table требует еще пару библиотек
+npm install react-table @types/react-table styled-components @types/styled-components
+npm install @types/react-table styled-components @types/styled-components
+

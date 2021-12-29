@@ -6,7 +6,8 @@ import AccountLayout from '../containers/account/AccountLayout';
 
 import { PageNotFoundView } from '../error/PageNotFoundView';
 import AccountDetailView from '../containers/account/AccountDetailView';
-import { MainView } from '../containers/MainView';
+import { MainView } from '../containers/main/MainView';
+import { TablePage } from '../containers/main/TablePage';
 
 export const AppRoutes: React.FC = (): JSX.Element => {
     const mainRoutes = {
@@ -16,6 +17,7 @@ export const AppRoutes: React.FC = (): JSX.Element => {
             {path: '*', element: <Navigate to='/404' />},
             {path: '/', element: <MainView />},
             {path: '404', element: <PageNotFoundView />},
+            {path: 'react-table', element: <TablePage />},
             {path: 'account', element: <Navigate to='/account/list' />},
             ],
     };
