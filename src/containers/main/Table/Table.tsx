@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTable } from 'react-table';
+import { useTable, Cell } from 'react-table';
 
 import { tableHeaders } from './tableHeaders';
 import { TableColumnsProps } from '../../../types/Table/TableColumns';
@@ -53,6 +53,19 @@ const Table = ({ columns, data }: TableProps) => {
         data,
     })
 
+    const tableCell = (cell: Cell) => {
+      try {
+        if (typeof cell.value === 'string' && cell.value.includes('\n')) {
+          console.log({ cell: cell.value });
+          const lines = cell.value.split('\n')
+          return lines.map((line:string, i:number)=><div key={i}>{line}<br/></div>)
+        }
+        return cell.render('Cell')
+      } catch (error) {
+        console.log({error });
+      }
+    }
+
   // Render the UI for your table
   return (
     <table {...getTableProps()}>
@@ -66,19 +79,21 @@ const Table = ({ columns, data }: TableProps) => {
         ))}
       </thead>
       <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row)
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-              })}
-            </tr>
-          )
-        })}
-      </tbody>
+            {rows.map((row, i) => {
+              prepareRow(row)
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell: Cell)  => {
+                    return <td {...cell.getCellProps()}>{tableCell(cell) ? tableCell(cell) : 'хй'}</td>
+                  }
+                  )}
+                </tr>
+              )
+            })}
+          </tbody>
     </table>
   )
+  
 }
 
 function TableComponent() {

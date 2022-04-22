@@ -1,0 +1,16 @@
+// variables
+$dark: #2c2c2c;
+$error: #f80d0d;
+$main_gray: #646464;
+$main_gray-dark: #4f4f4f;
+$primary_green: #7ecb1f;
+$primary_green-disabled: #4c8704;
+$primary_green-hover: #9cc964;
+$white: #ffffff;
+$white-disabled: #ffffff66;
+
+%tpl-font-sm {
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 500;
+}

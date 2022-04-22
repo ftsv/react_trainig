@@ -1,0 +1,44 @@
+@import '../../global.scss';
+
+.button {
+  cursor: pointer;
+  @extend %tpl-font-sm;
+  border-radius: 40px;
+  background-color: $primary_green;
+  color: $dark;
+
+  &:hover {
+    background-color: $primary_green-hover;
+  }
+
+  &:disabled {
+    cursor: auto;
+    background-color: $primary_green-disabled;
+    color: $white-disabled;
+  }
+
+  &-secondary {
+    background-color: $white;
+
+    &:disabled {
+      border-color: $white-disabled;
+      background-color: $main_gray;
+      color: $white-disabled;
+    }
+  }
+}
+
+.sm {
+  width: 140px;
+  height: 40px;
+}
+
+.md {
+  width: 240px;
+  height: 45px;
+}
+
+.xl {
+  width: 365px;
+  height: 40px;
+}
